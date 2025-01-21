@@ -8,7 +8,7 @@
         "rating": 4.5,
         "stock": 15,
         "SKU": "BTH-001",
-        "image": "headphones.jpg"
+        "image": "https://rilians.github.io/QuickCart/assets/images/products/headphones.jpg"
     },
     {
         "id": 2,
@@ -30,7 +30,7 @@
         "rating": 4.3,
         "stock": 7,
         "SKU": "TV-003",
-        "image": "tv.jpg"
+        "image": "https://rilians.github.io/QuickCart/assets/images/products/tv.jpg"
     },
     {
         "id": 4,
@@ -41,7 +41,7 @@
         "rating": 4.0,
         "stock": 20,
         "SKU": "SHOE-004",
-        "image": "running_shoes.jpg"
+        "image": "https://rilians.github.io/QuickCart/assets/images/products/running_shoes.jpg"
     },
     {
         "id": 5,
@@ -52,7 +52,7 @@
         "rating": 4.8,
         "stock": 30,
         "SKU": "BTL-005",
-        "image": "water_bottle.jpg"
+        "image": "https://rilians.github.io/QuickCart/assets/images/products/water_bottle.jpg"
     },
     {
         "id": 6,
@@ -63,7 +63,7 @@
         "rating": 4.6,
         "stock": 25,
         "SKU": "MAT-006",
-        "image": "yoga_mat.jpg"
+        "image": "https://rilians.github.io/QuickCart/assets/images/products/yoga_mat.jpg"
     },
     {
         "id": 7,
@@ -74,7 +74,7 @@
         "rating": 4.9,
         "stock": 50,
         "SKU": "SPICE-007",
-        "image": "turmeric.jpg"
+        "image": "https://rilians.github.io/QuickCart/assets/images/products/turmeric.jpg"
     },
     {
         "id": 8,
@@ -85,6 +85,6 @@
         "rating": 4.4,
         "stock": 15,
         "SKU": "MOUSE-008",
-        "image": "gaming_mouse.jpg"
+        "image": "https://rilians.github.io/QuickCart/assets/images/products/gaming_mouse.jpg"
     }
 ]
