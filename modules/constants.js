@@ -9,7 +9,7 @@ export function showNotification(message, type = 'info') {
     notification.className = `notification ${type}`;
     notification.textContent = message;
     document.body.appendChild(notification);
-    
+
     setTimeout(() => {
         notification.remove();
     }, 3000);
@@ -26,7 +26,7 @@ export const PLACEHOLDER_IMAGE = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA
 export const PRODUCT_IMAGES_PATH = '/assets/images/products/';
 export const DEFAULT_PRODUCT_IMAGE = '/assets/images/placeholder.png';
 
-export export const getProductImagePath = (imageName) => {
+export const getProductImagePath = (imageName) => {
     // Jika imageName adalah URL absolut (dimulai dengan http atau https)
     if (imageName && imageName.startsWith('http')) {
         return imageName; // Gunakan langsung URL absolut
