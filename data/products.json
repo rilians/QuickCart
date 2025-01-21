@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "name": "Wireless Bluetooth Headphones",
+        "description": "High-quality wireless Bluetooth headphones with noise cancellation and up to 20 hours of battery life.",
+        "price": 89.99,
+        "category": "Electronics",
+        "rating": 4.5,
+        "stock": 15,
+        "SKU": "BTH-001",
+        "image": "headphones.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Espresso Coffee Maker",
+        "description": "Compact espresso coffee maker capable of brewing barista-quality coffee at home.",
+        "price": 120.00,
+        "category": "Home Appliances",
+        "rating": 4.7,
+        "stock": 10,
+        "SKU": "COF-002",
+        "image": "coffee_maker.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Smart Android TV 50-inch",
+        "description": "50-inch Android TV with 4K Ultra HD display, offering smart features and a wide range of streaming apps.",
+        "price": 399.99,
+        "category": "Electronics",
+        "rating": 4.3,
+        "stock": 7,
+        "SKU": "TV-003",
+        "image": "tv.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Men's Running Shoes",
+        "description": "Lightweight and durable men's running shoes designed for optimum performance and comfort.",
+        "price": 50.75,
+        "category": "Apparel",
+        "rating": 4.0,
+        "stock": 20,
+        "SKU": "SHOE-004",
+        "image": "running_shoes.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Stainless Steel Water Bottle",
+        "description": "Eco-friendly stainless steel water bottle, keeping liquids cold for up to 48 hours or hot for up to 12 hours.",
+        "price": 25.95,
+        "category": "Outdoor",
+        "rating": 4.8,
+        "stock": 30,
+        "SKU": "BTL-005",
+        "image": "water_bottle.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Yoga Mat",
+        "description": "Eco-friendly, non-slip yoga mat perfect for all types of yoga and fitness exercises.",
+        "price": 19.99,
+        "category": "Fitness",
+        "rating": 4.6,
+        "stock": 25,
+        "SKU": "MAT-006",
+        "image": "yoga_mat.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Organic Turmeric Powder",
+        "description": "100% organic turmeric powder packed with natural antioxidants, perfect for cooking and dietary supplements.",
+        "price": 8.99,
+        "category": "Groceries",
+        "rating": 4.9,
+        "stock": 50,
+        "SKU": "SPICE-007",
+        "image": "turmeric.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Gaming Mouse",
+        "description": "High precision gaming mouse with customizable RGB lights and programmable buttons.",
+        "price": 35.99,
+        "category": "Gaming",
+        "rating": 4.4,
+        "stock": 15,
+        "SKU": "MOUSE-008",
+        "image": "gaming_mouse.jpg"
+    }
+]

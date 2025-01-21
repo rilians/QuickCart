@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QuickCart - Your one-stop shop for quality products">
+    <title>QuickCart</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- PWA support -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#00a5cf">
+    
+    <!-- Default icons (will be replaced by generated ones) -->
+    <link rel="icon" type="image/png" sizes="192x192" href="#">
+    <link rel="icon" type="image/png" sizes="512x512" href="#">
+    <link rel="apple-touch-icon" href="#">
+    
+    <!-- Load modules in correct order -->
+    <script type="module">
+        import { loadingStates, settings } from './modules/constants.js';
+        import { loadProducts, getProducts } from './modules/products.js';
+        import { displayProducts, showProductDetails, closeModal } from './modules/ui.js';
+        import * as cartFunctions from './modules/cartFunctions.js';
+        
+        // Correctly expose functions to global scope
+        window.ui = {
+            showProductDetails,
+            closeModal,
+            displayProducts
+        };
+
+        // Expose cart functions to window.cart
+        window.cart = {
+            addToCart: cartFunctions.addToCart,
+            removeFromCart: cartFunctions.removeFromCart,
+            updateQuantity: cartFunctions.updateQuantity,
+            calculateTotal: cartFunctions.calculateTotal
+        };
+
+        // Rest of initialization code
+        async function initialize() {
+            try {
+                await loadProducts();
+                const products = getProducts();
+                if (!products || products.length === 0) {
+                    throw new Error('Failed to load products');
+                }
+                
+                displayProducts(products);
+                
+            } catch (error) {
+                console.error('Initialization error:', error);
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', initialize);
+    </script>
+    
+    <!-- Main script -->
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <a href="/" class="logo">
+                <i class="fas fa-shopping-cart"></i>
+                QuickCart
+            </a>
+            <div class="search-section">
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                </div>
+            </div>
+            <div class="filter-group">
+                <div class="filter-item">
+                    <select id="categoryFilter">
+                        <option value="All Categories">All Categories</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <select id="ratingFilter">
+                        <option value="0">All Ratings</option>
+                        <option value="4">4+ Stars</option>
+                        <option value="3">3+ Stars</option>
+                        <option value="2">2+ Stars</option>
+                        <option value="1">1+ Stars</option>
+                    </select>
+                </div>
+                <div class="filter-item price-range">
+                    <span id="priceLabel">$0</span>
+                    <input type="range" id="priceRange" min="0" max="1000" step="1">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="featured-products">
+            <h2><i class="fas fa-star"></i> Featured Products</h2>
+            <div class="products-grid"></div>
+        </section>
+    </main>
+
+    <!-- Floating Cart Button -->
+    <div class="cart-trigger">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+        <div class="cart-preview"></div>
+    </div>
+
+    <!-- Cart Panel -->
+    <div class="cart-panel">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div id="cartItems" class="cart-items">
+            <!-- Empty cart message will be injected here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button id="checkoutBtn" class="checkout-btn" disabled>
+                Proceed to Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Checkout Panel -->
+    <div class="checkout-panel">
+        <div class="checkout-header">
+            <button class="back-to-cart">
+                <i class="fas fa-arrow-left"></i> Back to Cart
+            </button>
+            <button class="close-checkout">&times;</button>
+        </div>
+        <form id="checkoutForm" novalidate>
+            <div class="checkout-summary">
+                <h4>Order Summary</h4>
+                <div id="checkoutItems"></div>
+                <div class="checkout-total">
+                    <span>Total:</span>
+                    <span id="checkoutTotal">$0.00</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required pattern="\d{10,}" title="Please enter at least 10 digits">
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" required minlength="10"></textarea>
+            </div>
+            <button type="submit" class="checkout-btn">Complete Purchase</button>
+        </form>
+    </div>
+
+    <!-- Scripts -->
+    <!-- ...existing scripts... -->
+</body>
+</html>
+
