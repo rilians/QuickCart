@@ -26,6 +26,12 @@ export const PLACEHOLDER_IMAGE = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA
 export const PRODUCT_IMAGES_PATH = '/assets/images/products/';
 export const DEFAULT_PRODUCT_IMAGE = '/assets/images/placeholder.png';
 
-export const getProductImagePath = (imageName) => {
-    return imageName ? `/assets/images/products/${imageName}` : '/assets/images/placeholder.png';
+export export const getProductImagePath = (imageName) => {
+    // Jika imageName adalah URL absolut (dimulai dengan http atau https)
+    if (imageName && imageName.startsWith('http')) {
+        return imageName; // Gunakan langsung URL absolut
+    }
+
+    // Jika imageName relatif atau tidak ada, gunakan PRODUCT_IMAGES_PATH
+    return imageName ? `${PRODUCT_IMAGES_PATH}${imageName}` : DEFAULT_PRODUCT_IMAGE;
 };
