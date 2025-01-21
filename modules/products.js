@@ -8,7 +8,7 @@ export const getProducts = () => productsList;
 // Fungsi untuk memuat produk dari products.json
 export async function loadProducts() {
     try {
-        const response = await fetch('./data/products.json'); // Path diperbaiki menjadi relatif
+        const response = await fetch('https://rilians.github.io/QuickCart/data/products.json'); // Path diperbaiki menjadi relatif
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
