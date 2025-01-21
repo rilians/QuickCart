@@ -19,7 +19,7 @@
         "rating": 4.7,
         "stock": 10,
         "SKU": "COF-002",
-        "image": "coffee_maker.jpg"
+        "image": "https://rilians.github.io/QuickCart/assets/images/products/coffee_maker.jpg"
     },
     {
         "id": 3,
