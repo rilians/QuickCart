@@ -43,10 +43,19 @@ const productObserver = new IntersectionObserver((entries) => {
   });
 });
 
+// script.js
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js')
-    .catch(err => ErrorBoundary.handleError(err));
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+            .then((registration) => {
+                console.log('ServiceWorker berhasil diregistrasi: ', registration);
+            })
+            .catch((error) => {
+                console.error('Gagal registrasi ServiceWorker: ', error);
+            });
+    });
 }
+
 
 let cart = [];
 let cartVisible = false;
